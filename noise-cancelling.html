@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noise Cancelling - Sony WH-1000XM6</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sonyBlue: '#0050FF',
+                        sonyCyan: '#00D6FF',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            background-color: #050505; color: #ffffff; margin: 0; 
+            font-family: 'Inter', sans-serif;
+        }
+        nav {
+            backdrop-filter: blur(20px); background: rgba(5, 5, 5, 0.6);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #ffffff, #00D6FF);
+            -webkit-background-clip: text; background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .mic-point {
+            position: absolute; width: 12px; height: 12px;
+            background: #00D6FF; border-radius: 50%;
+            box-shadow: 0 0 20px #00D6FF;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(2.5); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="antialiased text-white">
+
+    <nav class="fixed top-0 w-full z-50 px-8 py-4 flex items-center justify-between">
+        <a href="index.html" class="text-xl font-semibold tracking-tight text-white/90">WH-1000XM6</a>
+        <div class="hidden md:flex space-x-10 text-[13px] tracking-wide text-white/60 font-medium">
+            <a href="index.html" class="hover:text-white transition-colors">Overview</a>
+            <a href="technology.html" class="hover:text-white transition-colors">Technology</a>
+            <a href="noise-cancelling.html" class="text-white transition-colors">Noise Cancelling</a>
+            <a href="specs.html" class="hover:text-white transition-colors">Specs</a>
+            <a href="#" class="hover:text-white transition-colors">Buy</a>
+        </div>
+    </nav>
+
+    <section class="h-screen flex items-center px-8 max-w-7xl mx-auto relative">
+        <div class="w-full md:w-1/2 z-10">
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-6 gradient-text">Absolute Silence.</h1>
+            <p class="text-[17px] text-white/70 mb-6 font-light leading-relaxed">Eight microphones. Two processors. Zero distractions. The WH-1000XM6 features our biggest leap forward in noise cancellation technology ever.</p>
+            <p class="text-[17px] text-white/70 font-light leading-relaxed border-l-2 border-sonyBlue pl-4">The Multi-Noise Sensor technology analyzes environmental low-frequency and high-frequency noise perfectly.</p>
+        </div>
+        
+        <!-- Interactive abstract visual for the microphones -->
+        <div class="hidden md:block absolute right-10 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border border-white/5 bg-white/5 backdrop-blur-3xl flex items-center justify-center">
+            <div class="w-[300px] h-[300px] rounded-full border border-sonyBlue/20"></div>
+            <div class="w-[100px] h-[100px] rounded-full border border-sonyCyan/40 absolute"></div>
+            <div class="mic-point" style="top: 20%; left: 30%;"></div>
+            <div class="mic-point" style="top: 50%; left: 80%; animation-delay: 0.5s;"></div>
+            <div class="mic-point" style="top: 80%; left: 40%; animation-delay: 1s;"></div>
+        </div>
+    </section>
+
+</body>
+</html>
