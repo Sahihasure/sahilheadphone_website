@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy WH-1000XM6 - Sony</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sonyBlue: '#0050FF',
+                        sonyCyan: '#00D6FF',
+                        bgDark: '#050505',
+                        bgSecondary: '#0A0A0C',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'SF Pro Display', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-image: radial-gradient(circle at left center, #0B0F1C 0%, #050505 100%);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        nav {
+            backdrop-filter: blur(20px);
+            background: rgba(53, 196, 212, 0.6);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .cta-btn {
+            background: linear-gradient(45deg, #0050FF, #00D6FF);
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            box-shadow: 0 0 25px rgba(0, 214, 255, 0.5);
+            transform: scale(1.02);
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 1.5rem;
+        }
+
+        .anim-element {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+    </style>
+</head>
+
+<body class="antialiased text-white min-h-screen flex flex-col">
+
+    <nav class="fixed top-0 w-full z-50 px-8 py-4 flex items-center justify-between">
+        <a href="index.html" class="text-xl font-semibold tracking-tight text-white/90">WH-1000XM6</a>
+        <div class="hidden md:flex space-x-10 text-[13px] tracking-wide text-white/60 font-medium">
+            <a href="index.html" class="hover:text-white transition-colors">Overview</a>
+            <a href="technology.html" class="hover:text-white transition-colors">Technology</a>
+            <a href="noise-cancelling.html" class="hover:text-white transition-colors">Noise Cancelling</a>
+            <a href="specs.html" class="hover:text-white transition-colors">Specs</a>
+            <a href="buy.html" class="text-white transition-colors border-b border-sonyCyan">Buy</a>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-32 pb-20 px-8 max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center gap-16">
+        <!-- Hero Product Image -->
+        <div class="w-full lg:w-1/2 flex justify-center anim-element">
+            <!-- Frame 200 represents the fully assembled headphone in high quality -->
+            <img src="hq_frames/ezgif-frame-200.jpg" alt="Sony WH-1000XM6"
+                class="w-full max-w-[500px] object-contain drop-shadow-2xl mix-blend-screen"
+                style="filter: contrast(1.15) brightness(1.1);">
+        </div>
+
+        <!-- Purchase Card -->
+        <div class="w-full lg:w-1/2 anim-element">
+            <div class="glass-panel p-8 md:p-12">
+                <div class="mb-4">
+                    <p class="text-sonyCyan font-semibold tracking-wider text-xs uppercase mb-2">Flagship Wireless</p>
+                    <h1 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4">Sony WH-1000XM6</h1>
+                </div>
+
+                <p class="text-white/60 font-light leading-relaxed mb-8 text-lg">
+                    Experience pure silence with our next-generation Edge-AI processors. Designed for those who demand
+                    the absolute best in high-fidelity audio and adaptive isolation.
+                </p>
+
+                <!-- Color Selection (Apple UI feel) -->
+                <div class="mb-8">
+                    <p class="text-sm text-white/50 mb-3">Finish: <span class="text-white">Midnight Black (Matte)</span>
+                    </p>
+                    <div class="flex gap-4">
+                        <button
+                            class="w-10 h-10 rounded-full bg-[#111111] border-2 border-sonyCyan shadow-[0_0_15px_rgba(0,214,255,0.4)]"></button>
+                        <button
+                            class="w-10 h-10 rounded-full bg-[#e3e3e3] border-2 border-transparent hover:border-white/20 transition-all"></button>
+                        <button
+                            class="w-10 h-10 rounded-full bg-[#1c2331] border-2 border-transparent hover:border-white/20 transition-all"></button>
+                    </div>
+                </div>
+
+                <!-- Interactive Price & Currency Toggle -->
+                <div class="border-t border-white/10 pt-8 mb-8">
+                    <div class="flex justify-between items-end mb-3">
+                        <div class="flex items-center gap-4">
+                            <h2 class="text-5xl font-bold tracking-tight" id="price-display">$399</h2>
+                            <span class="text-white/40 line-through text-xl" id="old-price-display">$449</span>
+                        </div>
+
+                        <div class="flex bg-white/5 p-1 rounded-full border border-white/10">
+                            <button onclick="setCurrency('USD')" id="btn-usd"
+                                class="px-5 py-1.5 text-xs font-bold rounded-full bg-white text-black transition-all">USD</button>
+                            <button onclick="setCurrency('INR')" id="btn-inr"
+                                class="px-5 py-1.5 text-xs font-bold rounded-full text-white/50 hover:text-white transition-all">INR</button>
+                        </div>
+                    </div>
+                    <p class="text-sonyCyan text-sm font-medium" id="discount-tag">✨ $50 Launch Promo Applied</p>
+                </div>
+
+                <button
+                    class="cta-btn w-full py-5 rounded-2xl text-[17px] font-bold tracking-wide text-white flex justify-center items-center shadow-lg">
+                    Pre-Order Now
+                </button>
+                <p class="text-center text-xs text-white/40 mt-5 tracking-wide">Free global shipping • 30-day returns •
+                    2-year Sony warranty</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        // Framer Motion style intro
+        gsap.to(".anim-element", {
+            y: 0,
+            opacity: 1,
+            duration: 1.2,
+            stagger: 0.2,
+            ease: "power3.out",
+            delay: 0.1
+        });
+
+        // Currency Toggle Logic
+        const prices = {
+            USD: { current: "$399", old: "$449", tag: "✨ $50 Launch Promo Applied" },
+            INR: { current: "₹32,990", old: "₹36,990", tag: "✨ ₹4,000 Launch Promo Applied" }
+        };
+
+        function setCurrency(currency) {
+            const p = prices[currency];
+            document.getElementById('price-display').innerText = p.current;
+            document.getElementById('old-price-display').innerText = p.old;
+            document.getElementById('discount-tag').innerText = p.tag;
+
+            // GSAP pulse animation to make it smooth and premium
+            gsap.fromTo("#price-display",
+                { scale: 1.05, filter: "brightness(1.5)", color: "#00D6FF" },
+                { scale: 1, filter: "brightness(1)", color: "#ffffff", duration: 0.6, ease: "power2.out" }
+            );
+
+            const btnUsd = document.getElementById('btn-usd');
+            const btnInr = document.getElementById('btn-inr');
+
+            if (currency === 'USD') {
+                btnUsd.className = "px-5 py-1.5 text-xs font-bold rounded-full bg-white text-black transition-all shadow-md";
+                btnInr.className = "px-5 py-1.5 text-xs font-bold rounded-full text-white/50 hover:text-white transition-all";
+            } else {
+                btnInr.className = "px-5 py-1.5 text-xs font-bold rounded-full bg-white text-black transition-all shadow-md";
+                btnUsd.className = "px-5 py-1.5 text-xs font-bold rounded-full text-white/50 hover:text-white transition-all";
+            }
+        }
+    </script>
+</body>
+
+</html>
